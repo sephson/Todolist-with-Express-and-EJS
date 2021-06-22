@@ -13,10 +13,18 @@
     </div>
     <div class="box">
       <% newListItem.map((i)=>{ %>
-      <div class="item">
-        <input type="checkbox" />
-        <p><%=i %></p>
-      </div>
+      <form action="/delete" method="post">
+        <div class="item">
+          <input
+            value="<%= i._id %>"
+            type="checkbox"
+            name="checked"
+            onChange="this.form.submit()"
+          />
+          <input type="hidden" name="listName" value="<%= kindOfDay %>"></input>
+          <p><%=i.name %></p>
+        </div>
+      </form>
 
       <% }) %>
 
@@ -27,7 +35,7 @@
           placeholder="Add Todo "
           autocomplete="off"
         />
-        <button name="button" type="submit">+</button>
+        <button name="button" type="submit" value="<%=kindOfDay%>">+</button>
       </form>
     </div>
   </body>

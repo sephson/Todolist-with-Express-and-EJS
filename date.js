@@ -2,10 +2,6 @@ module.exports.todaysDate = todaysDate(); // use this when you want to export mu
 function todaysDate() {
   var today = new Date();
 
-  //   today.getDay() === 6 || today.getDay() === 0
-  //     ? (day = "Weekend")
-  //     : (day = "Weekday");
-
   var options = {
     weekday: "long",
     day: "numeric",
